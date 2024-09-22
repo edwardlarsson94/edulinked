@@ -59,6 +59,7 @@ export default function Login() {
         title={Texts.buttons.google}
         colors= {[Colors.light.background, Colors.light.background]}
         type='google'
+        icon={require('../../../../assets/images/google.png')}
       />
 
       <TouchableOpacity style={styles.backButton}>

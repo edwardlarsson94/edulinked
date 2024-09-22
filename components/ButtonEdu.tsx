@@ -1,18 +1,20 @@
 import React from "react";
-import { Text, StyleSheet, TouchableOpacity } from "react-native";
+import { Text, StyleSheet, TouchableOpacity, View, Image } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { Colors } from "@/constants/Colors";
 
 interface ButtonEduProps {
   title: string;
   colors: string[];
-  type?: "primary" | "secondary" | "google";
+  type: "primary" | "secondary" | "google";
+  icon?: any;
 }
 
 export default function ButtonEdu({
   title,
   colors,
   type = "primary",
+  icon,
 }: ButtonEduProps) {
 
   const getButtonStyles = () => {
@@ -45,10 +47,12 @@ export default function ButtonEdu({
     <TouchableOpacity style={styles.container}>
       <LinearGradient
         colors={colors}
-        style={[styles.loginButton,getButtonStyles()]}
+        style={[styles.loginButton, getButtonStyles()]}
       >
-        {/* TODO: ADD ICON DINAMY WHEN EXIST ICON , EXAMPLE IF ICON EXIST RENDER ICONS assets/images/google.png */}
-        <Text style={[styles.loginText, getTextStyles()]}>{title}</Text>
+        <View style={styles.content}>
+          {icon && <Image source={icon} style={styles.icon} resizeMode="contain" />}
+          <Text style={[styles.loginText, getTextStyles()]}>{title}</Text>
+        </View>
       </LinearGradient>
     </TouchableOpacity>
   );
@@ -67,6 +71,15 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     alignItems: "center",
     marginBottom: 30,
+  },
+  content: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  icon: {
+    width: 24,
+    height: 24,
+    marginRight: 10,
   },
   primaryButton: {
     borderWidth: 2,
