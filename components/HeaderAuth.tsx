@@ -24,6 +24,7 @@ export default function HeaderAuth() {
               <Text style={styles.headerText}>{Texts.textLogo1}</Text>
               <Text style={[styles.headerText, styles.headerText2]}>{Texts.textLogo2}</Text>
             </View>
+            <Text style={styles.textHeader}>{Texts.textHeader}</Text>
           </View>
         </LinearGradient>
       </ImageBackground>
@@ -59,20 +60,29 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     marginBottom: 10,
+    marginTop:30
   },
   containerHeaderText: {
     flexDirection: 'row',
   },
   headerText: {
     color: Colors.light.title,
-    fontSize: 50,
+    fontSize: 62,
     fontWeight: '700',
     fontFamily: 'ManropeBold',
     lineHeight: 50,
     letterSpacing: -3,
+    paddingTop:15
   },
   headerText2: {
     color: Colors.light.SubTitle,
     marginLeft: -3,
+  },
+  textHeader:{
+    color: Colors.light.SubTitle,
+    fontFamily: 'ManropeBold',
+    fontSize: 24,
+    fontWeight: '700',
+    letterSpacing: -1,
   },
 });

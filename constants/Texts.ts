@@ -6,4 +6,5 @@ export const Texts = {
     titleRegister: '¿Aún no tienes una cuenta?',
     textLogo1:'edu',
     textLogo2:'linked',
+    textHeader: 'El saber nos une',
 }
