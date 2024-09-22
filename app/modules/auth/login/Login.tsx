@@ -4,9 +4,16 @@ import { Colors } from '@/constants/Colors';
 import { Ionicons } from '@expo/vector-icons';
 import { Texts } from '@/constants/Texts';
 import ButtonEdu from '@/components/ButtonEdu';
+import { useStore } from '@/app/state/store';
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
+  const updateShowLogin = useStore((state) => state.updateShowLogin)
+
+
+  const handleWelcomePress = () => {
+    updateShowLogin(false);
+  };
 
   return (
     <View style={styles.container}>
@@ -59,7 +66,9 @@ export default function Login() {
         icon={require('../../../../assets/images/google.png')}
       />
 
-      <TouchableOpacity style={styles.backButton}>
+      <TouchableOpacity style={styles.backButton}
+        onPress={handleWelcomePress}
+      >
         <Text style={styles.backText}>{Texts.login.back}</Text>
       </TouchableOpacity>
     </View>

@@ -3,8 +3,15 @@ import { View, Text, StyleSheet } from 'react-native';
 import ButtonEdu from '@/components/ButtonEdu';
 import { Colors } from '@/constants/Colors';
 import { Texts } from '@/constants/Texts';
+import { useStore } from '../state/store';
 
 export default function Welcome() {
+  const updateShowLogin = useStore((state) => state.updateShowLogin)
+
+  const handleLoginPress = () => {
+    updateShowLogin(true);
+  };
+
   return (      
       <View style={styles.container}>
         <Text style={styles.title}>{Texts.welcome.titleWelcome}</Text>
@@ -13,6 +20,7 @@ export default function Welcome() {
           title={Texts.buttons.login}
           colors= {[Colors.light.gradient1, Colors.light.gradient2]}
           type='primary'
+          onPress={handleLoginPress}
         />
         <View style={styles.registerContainer}>
           <Text style={styles.noAccountText}>{Texts.welcome.titleRegister}</Text>

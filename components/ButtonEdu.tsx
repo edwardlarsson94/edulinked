@@ -7,6 +7,7 @@ interface ButtonEduProps {
   title: string;
   colors: string[];
   type: "primary" | "secondary" | "google";
+  onPress?: () => void;
   icon?: any;
 }
 
@@ -14,6 +15,7 @@ export default function ButtonEdu({
   title,
   colors,
   type = "primary",
+  onPress,
   icon,
 }: ButtonEduProps) {
 
@@ -44,7 +46,9 @@ export default function ButtonEdu({
   };
 
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container}
+      onPress={onPress}
+    >
       <LinearGradient
         colors={colors}
         style={[styles.loginButton, getButtonStyles()]}
