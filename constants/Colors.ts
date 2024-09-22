@@ -19,7 +19,9 @@ export const Colors = {
     gradient2: '#A757FF',
     gradient3: '#24B9FF33',
     gradient4: '#A757FF33',
-    border: '#DDBFFF'
+    border: '#DDBFFF',
+    placeholder: '#6F5A85',
+    google: '#6788FF'
   },
   dark: {
     text: '#ECEDEE',

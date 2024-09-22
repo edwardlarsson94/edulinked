@@ -6,7 +6,7 @@ import { Colors } from "@/constants/Colors";
 interface ButtonEduProps {
   title: string;
   colors: string[];
-  type?: "primary" | "secondary";
+  type?: "primary" | "secondary" | "google";
 }
 
 export default function ButtonEdu({
@@ -21,6 +21,8 @@ export default function ButtonEdu({
         return styles.primaryButton;
       case "secondary":
         return styles.secondaryButton;
+      case "google":
+        return styles.googleButton;
       default:
         return styles.primaryButton;
     }
@@ -32,6 +34,8 @@ export default function ButtonEdu({
         return styles.primaryText;
       case "secondary":
         return styles.secondaryText;
+      case "google":
+        return styles.googleText;
       default:
         return styles.primaryText;
     }
@@ -43,6 +47,7 @@ export default function ButtonEdu({
         colors={colors}
         style={[styles.loginButton,getButtonStyles()]}
       >
+        {/* TODO: ADD ICON DINAMY WHEN EXIST ICON , EXAMPLE IF ICON EXIST RENDER ICONS assets/images/google.png */}
         <Text style={[styles.loginText, getTextStyles()]}>{title}</Text>
       </LinearGradient>
     </TouchableOpacity>
@@ -73,6 +78,11 @@ const styles = StyleSheet.create({
     borderColor: Colors.light.title,
     borderStyle: 'solid',
   },
+  googleButton: {
+    borderWidth: 2,
+    borderColor: Colors.light.google,
+    borderStyle: 'solid',
+  },
   loginText: {
     color: Colors.light.background,
     fontSize: 20,
@@ -84,5 +94,8 @@ const styles = StyleSheet.create({
   },
   secondaryText: {
     color: Colors.light.title,
+  },
+  googleText: {
+    color: Colors.light.google,
   },
 });

@@ -5,12 +5,18 @@ import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import Welcome from '../screens/Welcome';
+import HeaderAuth from '@/components/HeaderAuth';
+import Login from '../modules/auth/login/Login';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 
   return (
-    <Welcome></Welcome>
+    <>
+      <HeaderAuth/>
+      {/* <Welcome></Welcome> */}
+      <Login></Login>
+    </>
     //TODO: Refactor code for tabs
     // <Tabs
     //   screenOptions={{

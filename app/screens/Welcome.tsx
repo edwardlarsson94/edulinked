@@ -3,30 +3,26 @@ import { View, Text, StyleSheet } from 'react-native';
 import ButtonEdu from '@/components/ButtonEdu';
 import { Colors } from '@/constants/Colors';
 import { Texts } from '@/constants/Texts';
-import HeaderAuth from '@/components/HeaderAuth';
 
 export default function Welcome() {
-  return (
-    <>
-      <HeaderAuth/>
+  return (      
       <View style={styles.container}>
-        <Text style={styles.title}>{Texts.titleWelcome}</Text>
-        <Text style={styles.subtitle}>{Texts.subTitleWelcome}</Text>
+        <Text style={styles.title}>{Texts.welcome.titleWelcome}</Text>
+        <Text style={styles.subtitle}>{Texts.welcome.subTitleWelcome}</Text>
         <ButtonEdu 
-          title={Texts.login}
+          title={Texts.buttons.login}
           colors= {[Colors.light.gradient1, Colors.light.gradient2]}
           type='primary'
         />
         <View style={styles.registerContainer}>
-          <Text style={styles.noAccountText}>{Texts.titleRegister}</Text>
+          <Text style={styles.noAccountText}>{Texts.welcome.titleRegister}</Text>
           <ButtonEdu
-              title={Texts.register}
+              title={Texts.buttons.register}
               colors={[Colors.light.background,Colors.light.background]}
               type='secondary'
           />
         </View>
       </View>
-    </>
   );
 }
 

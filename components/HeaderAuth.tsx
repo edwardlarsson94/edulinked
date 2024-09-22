@@ -21,10 +21,10 @@ export default function HeaderAuth() {
           <View style={styles.overlay}>
             <Image source={logoImage} style={styles.logo} resizeMode="contain" />
             <View style={styles.containerHeaderText}>
-              <Text style={styles.headerText}>{Texts.textLogo1}</Text>
-              <Text style={[styles.headerText, styles.headerText2]}>{Texts.textLogo2}</Text>
+              <Text style={styles.headerText}>{Texts.header.textLogo1}</Text>
+              <Text style={[styles.headerText, styles.headerText2]}>{Texts.header.textLogo2}</Text>
             </View>
-            <Text style={styles.textHeader}>{Texts.textHeader}</Text>
+            <Text style={styles.textHeader}>{Texts.header.textHeader}</Text>
           </View>
         </LinearGradient>
       </ImageBackground>
