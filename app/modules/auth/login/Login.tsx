@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
 import { Colors } from '@/constants/Colors';
 import { Ionicons } from '@expo/vector-icons';
 import { Texts } from '@/constants/Texts';
 import ButtonEdu from '@/components/ButtonEdu';
-
-// const googleLogo = require('../assets/images/google-logo.png');
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);

@@ -3,16 +3,23 @@ import React from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Colors } from '@/constants/Colors';
 import { Texts } from '@/constants/Texts';
+import { useStore } from '@/app/state/store';
 
 const backgroundImage = require('../assets/images/header-auth.png');
 const logoImage = require('../assets/images/logo-app.png');
 
 export default function HeaderAuth() {
+
+  const showLogin = useStore((state) => state.showLogin)
+
   return (
     <View style={styles.container}>
       <ImageBackground
         source={backgroundImage}
-        style={styles.background}
+        style={[
+          styles.background, 
+          { height: !showLogin ? 360 : 300 }
+        ]}
       >
         <LinearGradient
           colors={[Colors.light.gradient3, Colors.light.gradient4]}
@@ -24,7 +31,7 @@ export default function HeaderAuth() {
               <Text style={styles.headerText}>{Texts.header.textLogo1}</Text>
               <Text style={[styles.headerText, styles.headerText2]}>{Texts.header.textLogo2}</Text>
             </View>
-            {false && <Text style={styles.textHeader}>{Texts.header.textHeader}</Text>}
+            {!showLogin && <Text style={styles.textHeader}>{Texts.header.textHeader}</Text>}
           </View>
         </LinearGradient>
       </ImageBackground>
@@ -40,7 +47,6 @@ const styles = StyleSheet.create({
   },
   background: {
     width: '100%',
-    height: true ? 300 : 360,
     justifyContent: 'center',
     alignItems: 'center',
   },

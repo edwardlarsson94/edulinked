@@ -7,15 +7,21 @@ import { useColorScheme } from '@/hooks/useColorScheme';
 import Welcome from '../screens/Welcome';
 import HeaderAuth from '@/components/HeaderAuth';
 import Login from '../modules/auth/login/Login';
+import { useStore } from '../state/store';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
+  const showLogin = useStore((state) => state.showLogin)
 
   return (
     <>
       <HeaderAuth/>
-      {/* <Welcome></Welcome> */}
-      <Login></Login>
+      { showLogin 
+        ?
+          <Login></Login>
+        :
+          <Welcome></Welcome> 
+      }
     </>
     //TODO: Refactor code for tabs
     // <Tabs
