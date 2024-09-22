@@ -18,7 +18,8 @@ export const Texts = {
         titleLogin: 'Inicia sesión en Edu',
         titleLoginEnd: 'linked',
         forgotPassword: '¿Olvidaste tu ',
-        forgotPasswordEnd: 'contraseña?'
+        forgotPasswordEnd: 'contraseña?',
+        back: '‹ Volver',
     },
     inputs: {
         placeholderUser: 'Usuario o correo electrónico',

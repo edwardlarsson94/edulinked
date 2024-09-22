@@ -35,7 +35,7 @@ export default function Login() {
         <TouchableOpacity
           onPress={() => setShowPassword(!showPassword)}
           style={styles.icon}>
-          <Ionicons name={showPassword ? 'eye-off' : 'eye'} size={24} color={Colors.light.icon} />
+          <Ionicons name={showPassword ? 'eye-off-outline' : 'eye-outline'} size={24} color={Colors.light.title} />
         </TouchableOpacity>
       </View>
 
@@ -63,7 +63,7 @@ export default function Login() {
       />
 
       <TouchableOpacity style={styles.backButton}>
-        <Text style={styles.backText}>‹ Volver</Text>
+        <Text style={styles.backText}>{Texts.login.back}</Text>
       </TouchableOpacity>
     </View>
   );
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     fontSize: 28,
     textAlign: 'center',
     color: Colors.light.title,
-    marginBottom: 30,
+    marginBottom: 20,
     fontFamily: 'ManropeBold',
     fontWeight: 800,
     letterSpacing: -1
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
   },
   forgotPassword: {
     color: Colors.light.SubTitle,
-    marginBottom: 30,
+    marginBottom: 20,
     fontSize: 20,
     fontFamily: 'ManropeBold',
     fontWeight: 700,
@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
     fontWeight: 500,
   },
   backButton: {
-    marginTop: 20,
+    marginTop: 0,
   },
   backText: {
     color: Colors.light.SubTitle,

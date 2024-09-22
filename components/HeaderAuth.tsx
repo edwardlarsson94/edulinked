@@ -24,7 +24,7 @@ export default function HeaderAuth() {
               <Text style={styles.headerText}>{Texts.header.textLogo1}</Text>
               <Text style={[styles.headerText, styles.headerText2]}>{Texts.header.textLogo2}</Text>
             </View>
-            <Text style={styles.textHeader}>{Texts.header.textHeader}</Text>
+            {false && <Text style={styles.textHeader}>{Texts.header.textHeader}</Text>}
           </View>
         </LinearGradient>
       </ImageBackground>
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   },
   background: {
     width: '100%',
-    height: 360,
+    height: true ? 300 : 360,
     justifyContent: 'center',
     alignItems: 'center',
   },
