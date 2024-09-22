@@ -7,34 +7,35 @@ import HeaderAuth from '@/components/HeaderAuth';
 
 export default function Welcome() {
   return (
-    <View style={styles.container}>
+    <>
       <HeaderAuth/>
-      <Text style={styles.title}>{Texts.titleWelcome}</Text>
-      <Text style={styles.subtitle}>{Texts.subTitleWelcome}</Text>
-      <ButtonEdu 
-        title={Texts.login}
-        colors= {[Colors.light.gradient1, Colors.light.gradient2]}
-        type='primary'
-      />
-      <View style={styles.registerContainer}>
-        <Text style={styles.noAccountText}>{Texts.titleRegister}</Text>
-        <ButtonEdu
-            title={Texts.register}
-            colors={[Colors.light.background,Colors.light.background]}
-            type='secondary'
+      <View style={styles.container}>
+        <Text style={styles.title}>{Texts.titleWelcome}</Text>
+        <Text style={styles.subtitle}>{Texts.subTitleWelcome}</Text>
+        <ButtonEdu 
+          title={Texts.login}
+          colors= {[Colors.light.gradient1, Colors.light.gradient2]}
+          type='primary'
         />
+        <View style={styles.registerContainer}>
+          <Text style={styles.noAccountText}>{Texts.titleRegister}</Text>
+          <ButtonEdu
+              title={Texts.register}
+              colors={[Colors.light.background,Colors.light.background]}
+              type='secondary'
+          />
+        </View>
       </View>
-    </View>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: Colors.light.background,
-    paddingHorizontal: 30,
+    padding: 30,
   },
   title: {
     fontSize: 28,
