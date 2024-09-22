@@ -4,4 +4,6 @@ export const Texts = {
     login: 'Iniciar sesión',
     register: 'Regístrate',
     titleRegister: '¿Aún no tienes una cuenta?',
+    textLogo1:'edu',
+    textLogo2:'linked',
 }

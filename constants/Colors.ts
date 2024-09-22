@@ -17,6 +17,8 @@ export const Colors = {
     tabIconSelected: tintColorLight,
     gradient1: '#872DEA',
     gradient2: '#A757FF',
+    gradient3: '#24B9FF33',
+    gradient4: '#A757FF33',
     border: '#DDBFFF'
   },
   dark: {

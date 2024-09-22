@@ -3,10 +3,12 @@ import { View, Text, StyleSheet } from 'react-native';
 import ButtonEdu from '@/components/ButtonEdu';
 import { Colors } from '@/constants/Colors';
 import { Texts } from '@/constants/Texts';
+import HeaderAuth from '@/components/HeaderAuth';
 
 export default function Welcome() {
   return (
     <View style={styles.container}>
+      <HeaderAuth/>
       <Text style={styles.title}>{Texts.titleWelcome}</Text>
       <Text style={styles.subtitle}>{Texts.subTitleWelcome}</Text>
       <ButtonEdu 
@@ -41,6 +43,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     fontFamily: 'ManropeBold',
     fontWeight: 800,
+    letterSpacing: -1
   },
   subtitle: {
     fontSize: 16,
