@@ -5,11 +5,26 @@ import { Ionicons } from '@expo/vector-icons';
 import { Texts } from '@/constants/Texts';
 import ButtonEdu from '@/components/ButtonEdu';
 import { useStore } from '@/app/state/store';
+import { loginUser } from '@/app/services/auth/auth.service';
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
-  const updateShowLogin = useStore((state) => state.updateShowLogin)
+  const updateShowLogin = useStore((state) => state.updateShowLogin);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
 
+  const handleLogin = async () => {
+    setLoading(true);
+    try {
+      const data = await loginUser(username, password);
+      console.log('Login successful', data);
+    } catch (error) {
+      console.log('Error', error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleWelcomePress = () => {
     updateShowLogin(false);
@@ -26,6 +41,7 @@ export default function Login() {
           style={styles.input}
           placeholder={Texts.inputs.placeholderUser}
           placeholderTextColor={Colors.light.placeholder}
+          onChangeText={setUsername}
         />
       </View>
 
@@ -35,6 +51,7 @@ export default function Login() {
           placeholder={Texts.inputs.placeholderPassword}
           placeholderTextColor={Colors.light.placeholder}
           secureTextEntry={!showPassword}
+          onChangeText={setPassword}
         />
         <TouchableOpacity
           onPress={() => setShowPassword(!showPassword)}
@@ -42,11 +59,12 @@ export default function Login() {
           <Ionicons name={showPassword ? 'eye-off-outline' : 'eye-outline'} size={24} color={Colors.light.title} />
         </TouchableOpacity>
       </View>
-
+  
       <ButtonEdu 
         title={Texts.buttons.login}
         colors= {[Colors.light.gradient1, Colors.light.gradient2]}
         type='primary'
+        onPress={handleLogin}
       />
 
       <TouchableOpacity>
