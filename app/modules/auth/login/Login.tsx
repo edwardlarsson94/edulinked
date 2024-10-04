@@ -10,6 +10,7 @@ import { loginUser } from '@/app/services/auth/auth.service';
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const updateShowLogin = useStore((state) => state.updateShowLogin);
+  const updateIsAuthenticated = useStore((state) => state.updateIsAuthenticated);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -19,6 +20,7 @@ export default function Login() {
     try {
       const data = await loginUser(username, password);
       console.log('Login successful', data);
+      updateIsAuthenticated(data?.status);
     } catch (error) {
       console.log('Error', error);
     } finally {
