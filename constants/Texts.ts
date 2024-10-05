@@ -25,4 +25,11 @@ export const Texts = {
         placeholderUser: 'Usuario o correo electrónico',
         placeholderPassword: 'Contraseña'
     },
+    post: {
+        comments: 'comentarios',
+        shares: 'compartidos',
+        reaction: 'Reaccionar',
+        post: 'Comentar',
+        share: 'Compartir'
+    }
 }

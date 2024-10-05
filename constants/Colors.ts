@@ -21,7 +21,7 @@ export const Colors = {
     gradient4: '#A757FF33',
     border: '#DDBFFF',
     placeholder: '#6F5A85',
-    google: '#6788FF'
+    google: '#6788FF',
   },
   dark: {
     text: '#ECEDEE',
