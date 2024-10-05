@@ -1,37 +1,29 @@
-import { Tabs } from 'expo-router';
 import React from 'react';
-
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+import Welcome from '../screens/Welcome';
+import HeaderAuth from '@/components/HeaderAuth';
+import Login from '../modules/auth/login/Login';
+import { useStore } from '../state/store';
+import Wall from '../modules/post/wall/Wall';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+  const showLogin = useStore((state) => state.showLogin)
+  const isAuthenticated = useStore((state) => state.isAuthenticated)
 
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
-          ),
-        }}
-      />
-    </Tabs>
+    <>
+      {      
+        isAuthenticated ? 
+          <Wall/> :
+          <>
+            <HeaderAuth/>
+            { showLogin 
+              ?
+                <Login></Login>
+              :
+                <Welcome></Welcome> 
+            }
+          </>
+      }
+    </>
   );
 }

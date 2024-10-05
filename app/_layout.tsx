@@ -13,7 +13,8 @@ SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    Manrope: require('../assets/fonts/Manrope-Regular.ttf'),
+    ManropeBold: require('../assets/fonts/Manrope-Bold.ttf'),
   });
 
   useEffect(() => {
